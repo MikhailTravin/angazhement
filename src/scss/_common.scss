@@ -1,0 +1,128 @@
+body {
+  color: var(--white);
+  background: var(--black);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  padding: 0px 0px 0px 0px !important;
+  &.hide-scrollbar {
+    margin: 0px 0px 0px 0px !important;
+  }
+  .lock & {
+    overflow: hidden;
+  }
+  .popup-show & {
+    overflow: hidden;
+  }
+  &::before {
+    content: "";
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 97;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .menu-open & {
+    overflow: hidden;
+    &::before {
+      content: "";
+      opacity: 1;
+      pointer-events: auto;
+      @media (max-width: 600px) {
+        display: none;
+      }
+    }
+  }
+}
+
+body.noscroll {
+  overflow: hidden;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+fieldset,
+fieldset legend {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  outline: none;
+  color: currentcolor;
+}
+
+.btn {
+  border: 1px solid rgba(210, 209, 204, 0.2);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 20px;
+  min-height: 35px;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  line-height: 120%;
+  background-color: transparent;
+  min-width: 130px;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    opacity 0.3s;
+  @media (max-width: 768px) {
+    min-height: 30px;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    padding: 5px 18px;
+    min-width: 112px;
+  }
+  &:hover {
+    color: var(--black);
+    background-color: var(--white);
+  }
+  &.disabled {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  a {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    svg {
+      fill: #f4f4f4;
+    }
+    &:hover {
+      background-color: var(--red);
+    }
+  }
+}
