@@ -265,12 +265,16 @@ if (header) {
 //========================================================================================================================================================
 
 if (document.querySelector('.block-advertising__slider')) {
+  const slidesCount = document.querySelectorAll('.block-advertising__slider .swiper-slide').length;
+
   const swiperAdvertising = new Swiper('.block-advertising__slider', {
     observer: true,
     observeParents: true,
     slidesPerView: 1,
     spaceBetween: 0,
-    loop: true,
+    loop: slidesCount >= 2, 
+    loopedSlides: slidesCount,
+    loopAdditionalSlides: slidesCount,
     lazy: true,
     speed: 1000,
     autoplay: {
@@ -278,10 +282,10 @@ if (document.querySelector('.block-advertising__slider')) {
     },
     breakpoints: {
       480: {
-        slidesPerView: 2,
+        slidesPerView: Math.min(2, slidesCount),
       },
       992: {
-        slidesPerView: 3,
+        slidesPerView: Math.min(3, slidesCount),
       },
     },
   });
@@ -459,3 +463,97 @@ if (sliderCalendarNav) {
 };
 
 //========================================================================================================================================================
+
+let dataTabs = document.querySelectorAll('[data-tabs]');
+if (dataTabs) {
+  dataTabs.forEach(tabBlock => {
+    const tabButtons = tabBlock.querySelectorAll('.block-calendar-nav__column');
+    const tabContents = tabBlock.querySelectorAll('.block-calendar__body');
+
+    if (!tabButtons.length || !tabContents.length) return;
+
+    const activateTab = (tabId) => {
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      tabContents.forEach(content => content.classList.remove('active'));
+
+      const activeButton = tabBlock.querySelector(`.block-calendar-nav__column[data-tab="${tabId}"]`);
+      const activeContent = tabBlock.querySelector(`.block-calendar__body[data-tab="${tabId}"]`);
+
+      if (activeButton) activeButton.classList.add('active');
+      if (activeContent) activeContent.classList.add('active');
+    };
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const tabId = button.getAttribute('data-tab');
+        if (tabId) activateTab(tabId);
+      });
+    });
+
+    const activeTabButton = tabBlock.querySelector('.block-calendar-nav__column.active');
+    if (activeTabButton) {
+      const initialTabId = activeTabButton.getAttribute('data-tab');
+      if (initialTabId) activateTab(initialTabId);
+    } else if (tabButtons.length) {
+      const firstTabId = tabButtons[0].getAttribute('data-tab');
+      if (firstTabId) activateTab(firstTabId);
+    }
+
+    const prevArrow = tabBlock.querySelector('.arrow-prev');
+    const nextArrow = tabBlock.querySelector('.arrow-next');
+    const sliderWrapper = tabBlock.querySelector('.block-calendar-nav__wrapper');
+    const slides = tabBlock.querySelectorAll('.block-calendar-nav__slide');
+
+    if (prevArrow && nextArrow && sliderWrapper && slides.length) {
+      let currentSlide = 0;
+      let slideWidth = slides[0].offsetWidth;
+
+      const updateSliderPosition = (animate = true) => {
+        if (sliderWrapper) {
+          sliderWrapper.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+          sliderWrapper.style.transition = animate ? 'transform 0.3s ease' : 'none';
+        }
+      };
+
+      const updateArrowsVisibility = () => {
+        prevArrow.style.opacity = currentSlide === 0 ? '0.5' : '1';
+        prevArrow.style.pointerEvents = currentSlide === 0 ? 'none' : 'auto';
+        nextArrow.style.opacity = currentSlide === slides.length - 1 ? '0.5' : '1';
+        nextArrow.style.pointerEvents = currentSlide === slides.length - 1 ? 'none' : 'auto';
+      };
+
+      prevArrow.addEventListener('click', () => {
+        if (currentSlide > 0) {
+          currentSlide--;
+          updateSliderPosition(true);
+          updateArrowsVisibility();
+        }
+      });
+
+      nextArrow.addEventListener('click', () => {
+        if (currentSlide < slides.length - 1) {
+          currentSlide++;
+          updateSliderPosition(true);
+          updateArrowsVisibility();
+        }
+      });
+
+      let isResizing = false;
+      window.addEventListener('resize', () => {
+        if (isResizing) return;
+        isResizing = true;
+        requestAnimationFrame(() => {
+          const newSlideWidth = slides[0].offsetWidth;
+          if (newSlideWidth !== slideWidth) {
+            slideWidth = newSlideWidth;
+            updateSliderPosition(false);
+            updateArrowsVisibility();
+          }
+          isResizing = false;
+        });
+      });
+
+      updateArrowsVisibility();
+    }
+  });
+}

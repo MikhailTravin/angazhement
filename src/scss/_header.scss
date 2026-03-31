@@ -181,10 +181,12 @@
         @media (min-width: 1101px) {
             &:hover {
                 .header-menu__button {
-                    color: var(--white);
+                    color: var(--red);
                 }
                 .header-menu__arrow {
                     img {
+                        filter: invert(84%) sepia(53%) saturate(5888%) hue-rotate(345deg) brightness(100%) contrast(99%);
+                        transform: rotate(-180deg);
                         opacity: 1;
                     }
                 }
@@ -239,7 +241,9 @@
             width: 20px;
         }
         img {
-            transition: opacity 0.3s;
+            transition:
+                opacity 0.3s,
+                transform 0.3s;
             opacity: 0.6;
             width: 10px;
             height: auto;
