@@ -239,6 +239,10 @@
             @media (max-width: 992px) {
                 opacity: 1;
                 pointer-events: auto;
+                &.disabled {
+                    opacity: 0.4 !important;
+                    pointer-events: none;
+                }
             }
         }
     }

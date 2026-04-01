@@ -1462,6 +1462,10 @@ a {
     opacity: 1;
     pointer-events: auto;
   }
+  .block-calendar__item .btn.disabled {
+    opacity: 0.4 !important;
+    pointer-events: none;
+  }
 }
 .block-calendar__date {
   display: -webkit-box;
