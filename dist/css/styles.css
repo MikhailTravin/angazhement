@@ -1723,6 +1723,9 @@ a {
 .block-calendar-nav__column:hover {
   background-color: rgba(42, 42, 42, 0.1);
 }
+.block-calendar-nav__column.active {
+  background-color: rgba(42, 42, 42, 0.1);
+}
 @media (max-width: 768px) {
   .block-calendar-nav__column {
     font-size: 16px;
