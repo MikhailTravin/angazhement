@@ -1329,7 +1329,7 @@ a {
     pointer-events: auto;
   }
   .block-calendar__column:hover .btn.disabled {
-    opacity: 0;
+    opacity: 0.4 !important;
     pointer-events: none;
   }
 }
@@ -1453,11 +1453,6 @@ a {
 .block-calendar__item.disabled {
   pointer-events: none;
 }
-@media (max-width: 768px) {
-  .block-calendar__item.disabled {
-    opacity: 0.4 !important;
-  }
-}
 .block-calendar__item .btn {
   opacity: 0;
   pointer-events: none;
@@ -1466,9 +1461,6 @@ a {
   .block-calendar__item .btn {
     opacity: 1;
     pointer-events: auto;
-  }
-  .block-calendar__item .btn.disabled {
-    opacity: 1 !important;
   }
 }
 .block-calendar__date {
