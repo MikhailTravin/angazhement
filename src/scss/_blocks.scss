@@ -943,7 +943,7 @@
             color 0.3s,
             border 0.3s;
         &:hover {
-            color: var(--red);
+            background-color: rgba(210, 209, 204, 0.1);
         }
         &.active {
             background-color: var(--red);
@@ -1787,7 +1787,8 @@
         background-color: transparent;
         color: var(--white);
         &:hover {
-            color: var(--red);
+            border: 1px solid transparent;
+            background-color: rgba(210, 209, 204, 0.1);
         }
         &.active {
             background-color: var(--red);
@@ -1816,6 +1817,311 @@
             display: none;
             &.active {
                 display: flex;
+            }
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+.block-contacts {
+    padding: 40px 0px 120px 0px;
+    @media (max-width: 768px) {
+        padding: 40px 0px 80px 0px;
+    }
+    // .block-contacts__content
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+    }
+
+    // .block-contacts__body
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        @media (max-width: 768px) {
+            gap: 24px;
+        }
+    }
+
+    // .block-contacts__top
+
+    &__top {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(2, 1fr);
+        @media (max-width: 992px) {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+    }
+
+    // .block-contacts__left
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        p {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 130%;
+            letter-spacing: 0.01em;
+        }
+    }
+
+    // .block-contacts__title
+
+    &__title {
+        font-family: var(--second-family);
+        font-weight: 700;
+        line-height: 130%;
+        font-size: 44px;
+        letter-spacing: 0em;
+        @media (max-width: 992px) {
+            br {
+                display: none;
+            }
+        }
+        @media (max-width: 768px) {
+            font-size: 18px;
+            letter-spacing: 0.01em;
+        }
+    }
+
+    // .block-contacts__right
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        @media (max-width: 992px) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    // .block-contacts__mail
+
+    &__mail {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0.01em;
+    }
+
+    // .block-contacts__contacts
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    // .block-contacts__phone
+
+    &__phone {
+        font-family: var(--second-family);
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 130%;
+        letter-spacing: 0.01em;
+        @media (max-width: 768px) {
+            font-size: 24px;
+        }
+        a {
+            transition: color 0.3s;
+            &:hover {
+                color: var(--red);
+            }
+        }
+    }
+
+    // .block-contacts__work
+
+    &__work {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0.01em;
+    }
+
+    // .block-contacts__bottom
+
+    &__bottom {
+        display: grid;
+        align-items: start;
+        gap: 24px;
+        grid-template-columns: repeat(2, 1fr);
+        @media (max-width: 992px) {
+            grid-template-columns: 1fr;
+        }
+        @media (max-width: 768px) {
+            gap: 12px;
+        }
+    }
+
+    // .block-contacts__map
+
+    &__map {
+        width: 100%;
+        height: 100%;
+        min-height: 300px;
+        @media (max-width: 992px) {
+            min-height: 100%;
+            height: 240px;
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+.block-contacts-personal {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    // .block-contacts-personal__column
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        &.personal-column {
+            .block-contacts-personal__cards {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+                @media (max-width: 768px) {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+        &.personal-column-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            @media (max-width: 992px) {
+                grid-template-columns: 1fr;
+            }
+            .block-contacts-personal__cards {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                @media (max-width: 992px) {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                @media (max-width: 768px) {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+    }
+
+    // .block-contacts-personal__title
+
+    &__title {
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 120%;
+        @media (max-width: 768px) {
+            font-size: 18px;
+        }
+    }
+
+    // .block-contacts-personal__cards
+
+    &__cards {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(3, 1fr);
+        @media (max-width: 1150px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: 768px) {
+            gap: 8px;
+            grid-template-columns: 1fr;
+        }
+        &.personal-cards-other {
+            .personal-card {
+                padding: 0px 0px 24px 0px;
+                background: transparent;
+                gap: 8px;
+                border-bottom: 1px solid rgba(210, 209, 204, 0.1);
+            }
+            .personal-card__title {
+                border-bottom: none;
+                padding: 0px 0px 0px 0px;
+            }
+        }
+    }
+}
+.personal-card {
+    background: rgba(210, 209, 204, 0.1);
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @media (max-width: 768px) {
+        padding: 20px;
+    }
+    // .personal-card__title
+
+    &__title {
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 130%;
+        letter-spacing: 0.01em;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 0px 0px 16px 0px;
+    }
+
+    // .personal-card__item
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        p {
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 130%;
+            letter-spacing: 0.02em;
+            color: var(--white-60);
+            @media (max-width: 768px) {
+                font-size: 12px;
+            }
+        }
+    }
+
+    // .personal-card__name
+
+    &__name {
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 130%;
+        letter-spacing: 0.01em;
+        color: var(--red);
+        transition: opacity 0.3s;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    // .personal-card__phones
+
+    &__phones {
+        a {
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 130%;
+            letter-spacing: 0.01em;
+            transition: opacity 0.3s;
+            &:hover {
+                opacity: 0.7;
             }
         }
     }
