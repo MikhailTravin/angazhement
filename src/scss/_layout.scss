@@ -32,3 +32,27 @@
   max-width: var(--container-width);
   padding: 0px 16px;
 }
+
+//========================================================================================================================================================
+
+.special-vision {
+  // Основная обертка
+  .main-wrapper-outer {
+    background: #ffffff !important;
+  }
+
+  // Основной контент
+  .main {
+    margin-top: 0px !important; // Убираем отступ под фиксированный хедер, если нужно
+  }
+
+  // Контейнер
+  .container {
+    max-width: 1400px !important; // Увеличиваем ширину для лучшей читаемости
+    padding: 0px 24px !important;
+
+    @media (max-width: 768px) {
+      padding: 0px 16px !important;
+    }
+  }
+}

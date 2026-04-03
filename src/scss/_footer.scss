@@ -267,3 +267,118 @@
         }
     }
 }
+
+//========================================================================================================================================================
+
+.special-vision {
+    // Футер
+    .footer {
+        background: #ffffff !important;
+        border-top: 2px solid #000000 !important;
+    }
+
+    // Верхняя часть футера
+    .footer-top {
+        &__logo {
+            img {
+                filter: brightness(0) !important; // Черное лого
+            }
+        }
+
+        &__bg {
+            img {
+                filter: brightness(0.9) !important;
+                border: 1px solid #000000 !important;
+            }
+        }
+    }
+
+    // Контакты в футере
+    .footer-contacts {
+        &__address {
+            p {
+                color: #000000 !important;
+                font-size: 18px !important;
+            }
+        }
+
+        &__contact {
+            color: #000000 !important;
+            font-size: 18px !important;
+
+            a {
+                color: #0033cc !important;
+
+                &:hover {
+                    color: #000000 !important;
+                }
+            }
+        }
+
+        &__phone {
+            font-size: 38px !important;
+
+            @media (max-width: 650px) {
+                font-size: 28px !important;
+            }
+
+            a {
+                color: #0033cc !important;
+            }
+        }
+
+        &__work {
+            color: #000000 !important;
+            font-size: 18px !important;
+
+            @media (max-width: 650px) {
+                font-size: 16px !important;
+            }
+        }
+    }
+
+    // Меню в футере
+    .footer-menu {
+        &__title {
+            color: #000000 !important;
+            font-size: 18px !important;
+            font-weight: 700 !important;
+        }
+
+        &__column {
+            ul {
+                li {
+                    a {
+                        color: #000000 !important;
+                        font-size: 16px !important;
+
+                        &:hover {
+                            color: #0033cc !important;
+                            text-decoration: underline !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Нижняя часть футера
+    .footer-bottom {
+        border-top: 1px solid #000000 !important;
+
+        ul {
+            li {
+                color: #000000 !important;
+                font-size: 15px !important;
+
+                a {
+                    color: #0033cc !important;
+
+                    &:hover {
+                        color: #000000 !important;
+                    }
+                }
+            }
+        }
+    }
+}

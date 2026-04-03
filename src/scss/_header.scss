@@ -5,6 +5,9 @@
     width: 100%;
     z-index: 100;
     background: var(--black);
+    .special & {
+        top: 49px;
+    }
     .container {
         @media (max-width: 768px) {
             padding: 0px 20px;
@@ -570,6 +573,158 @@
             content: "";
             bottom: calc(50% - 1px);
             transform: rotate(45deg);
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+.special-vision {
+    // Хедер
+    .header {
+        background: #ffffff !important;
+        border-bottom: 2px solid #000000 !important;
+
+        .special & {
+            top: 0 !important; // Убираем отступ для плашки специальных возможностей
+        }
+
+        // Логотип
+        &__logo {
+            img {
+                filter: brightness(0) !important; // Делаем логотип черным
+            }
+        }
+
+        // Текст в хедере
+        &__text {
+            color: #000000 !important;
+
+            a {
+                color: #0033cc !important;
+
+                &:hover {
+                    color: #000000 !important;
+                }
+            }
+        }
+
+        // Бургер
+        &__burger {
+            .icon-menu {
+                span,
+                &::before,
+                &::after {
+                    background-color: #000000 !important;
+                }
+            }
+        }
+    }
+
+    // Меню
+    .header-menu {
+        @media (max-width: 1100px) {
+            background: #ffffff !important;
+        }
+
+        &__list {
+            @media (max-width: 1100px) {
+                gap: 20px !important;
+            }
+        }
+
+        &__button {
+            color: #000000 !important;
+            font-size: 16px !important;
+
+            @media (max-width: 1100px) {
+                color: #000000 !important;
+                font-size: 18px !important;
+            }
+        }
+
+        &__arrow {
+            img {
+                @media (max-width: 1100px) {
+                    filter: brightness(0) !important;
+                }
+            }
+        }
+
+        &__dropdown {
+            @media (max-width: 1100px) {
+                background: #ffffff !important;
+            }
+
+            ul {
+                background: #f0f0f0 !important;
+
+                li {
+                    a {
+                        color: #000000 !important;
+                        font-size: 16px !important;
+
+                        &:hover {
+                            opacity: 0.6 !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__back {
+            img {
+                filter: brightness(0) !important;
+            }
+        }
+    }
+
+    // Контакты в хедере
+    .header-contacts {
+        &__arrow {
+            svg {
+                &.arrow-white {
+                    fill: #000000 !important;
+                }
+                &.arrow-red {
+                    fill: #000000 !important;
+                }
+            }
+        }
+
+        &__body {
+            background: #f0f0f0 !important;
+            border: 2px solid #000000 !important;
+        }
+
+        &__logo {
+            img {
+                filter: brightness(0) !important;
+            }
+        }
+
+        &__location {
+            color: #000000 !important;
+            font-size: 16px !important;
+
+            img {
+                filter: brightness(0) !important;
+            }
+        }
+
+        &__phones {
+            a {
+                color: #0033cc !important;
+                font-size: 20px !important;
+            }
+        }
+
+        &__work {
+            color: #000000 !important;
+
+            p {
+                color: #000000 !important;
+            }
         }
     }
 }
