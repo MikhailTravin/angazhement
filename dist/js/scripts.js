@@ -272,7 +272,7 @@ if (document.querySelector('.block-advertising__slider')) {
     observeParents: true,
     slidesPerView: 1,
     spaceBetween: 0,
-    loop: slidesCount >= 2, 
+    loop: slidesCount >= 2,
     loopedSlides: slidesCount,
     loopAdditionalSlides: slidesCount,
     lazy: true,
@@ -286,6 +286,30 @@ if (document.querySelector('.block-advertising__slider')) {
       },
       992: {
         slidesPerView: Math.min(3, slidesCount),
+      },
+    },
+  });
+}
+
+if (document.querySelector('.block-other__slider')) {
+  const swiperOther = new Swiper('.block-other__slider', {
+    observer: true,
+    observeParents: true,
+    slidesPerView: 4,
+    spaceBetween: 16,
+    speed: 400,
+    navigation: {
+      prevEl: '.block-other__arrow-prev',
+      nextEl: '.block-other__arrow-next',
+    },
+    breakpoints: {
+      480: {
+        slidesPerView: 4,
+        spaceBetween: 16,
+      },
+      1300: {
+        slidesPerView: 5,
+        spaceBetween: 24,
       },
     },
   });
@@ -311,6 +335,48 @@ if (document.querySelector('.block-intro__slider')) {
       el: '.block-intro__pagination',
       clickable: true,
     }
+  });
+}
+
+if (document.querySelector('.block-card__slider')) {
+  const swiperCard = new Swiper('.block-card__slider', {
+    observer: true,
+    observeParents: true,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    lazy: true,
+    speed: 800,
+    autoplay: {
+      delay: 3000,
+    },
+    pagination: {
+      el: '.block-card__pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+    },
+  });
+}
+
+if (document.querySelector('.block-article__slider')) {
+  const swiperArticle = new Swiper('.block-article__slider', {
+    observer: true,
+    observeParents: true,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    speed: 400,
+    navigation: {
+      prevEl: '.block-article__arrow-prev',
+      nextEl: '.block-article__arrow-next',
+    },
+    pagination: {
+      el: '.block-article__pagination',
+      clickable: true,
+    },
   });
 }
 
@@ -467,8 +533,8 @@ if (sliderCalendarNav) {
 let dataTabs = document.querySelectorAll('[data-tabs]');
 if (dataTabs) {
   dataTabs.forEach(tabBlock => {
-    const tabButtons = tabBlock.querySelectorAll('.block-calendar-nav__column');
-    const tabContents = tabBlock.querySelectorAll('.block-calendar__body');
+    const tabButtons = tabBlock.querySelectorAll('[data-tab-title]');
+    const tabContents = tabBlock.querySelectorAll('[data-tab-body]');
 
     if (!tabButtons.length || !tabContents.length) return;
 
@@ -476,8 +542,8 @@ if (dataTabs) {
       tabButtons.forEach(btn => btn.classList.remove('active'));
       tabContents.forEach(content => content.classList.remove('active'));
 
-      const activeButton = tabBlock.querySelector(`.block-calendar-nav__column[data-tab="${tabId}"]`);
-      const activeContent = tabBlock.querySelector(`.block-calendar__body[data-tab="${tabId}"]`);
+      const activeButton = tabBlock.querySelector(`[data-tab-title][data-tab="${tabId}"]`);
+      const activeContent = tabBlock.querySelector(`[data-tab-body][data-tab="${tabId}"]`);
 
       if (activeButton) activeButton.classList.add('active');
       if (activeContent) activeContent.classList.add('active');
@@ -490,7 +556,7 @@ if (dataTabs) {
       });
     });
 
-    const activeTabButton = tabBlock.querySelector('.block-calendar-nav__column.active');
+    const activeTabButton = tabBlock.querySelector('[data-tab-title].active');
     if (activeTabButton) {
       const initialTabId = activeTabButton.getAttribute('data-tab');
       if (initialTabId) activateTab(initialTabId);
@@ -556,4 +622,24 @@ if (dataTabs) {
       updateArrowsVisibility();
     }
   });
+}
+
+//========================================================================================================================================================
+
+Fancybox.bind("[data-fancybox]", {
+  // опции
+});
+
+//========================================================================================================================================================
+
+const toggle = document.getElementById('specialVisionToggle');
+if (toggle) {
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('special-vision');
+    localStorage.setItem('specialVision', document.body.classList.contains('special-vision'));
+  });
+
+  if (localStorage.getItem('specialVision') === 'true') {
+    document.body.classList.add('special-vision');
+  }
 }
