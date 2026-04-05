@@ -1741,7 +1741,7 @@ a {
 }
 .block-calendar-nav__slider {
   position: relative;
-  overflow: auto;
+  overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -3111,7 +3111,7 @@ a {
   width: 100%;
 }
 .article-table__body {
-  overflow: auto;
+  overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -3236,7 +3236,7 @@ a {
   border: 1px solid rgba(210, 209, 204, 0.2);
   width: 100%;
   border-radius: 8px;
-  overflow: auto;
+  overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -3933,7 +3933,7 @@ a {
     background: var(--white);
     -webkit-transition: right 0.3s;
     transition: right 0.3s;
-    overflow: auto;
+    overflow-y: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
@@ -4135,7 +4135,7 @@ a {
           flex-direction: column;
   gap: 16px;
   max-height: 304px;
-  overflow: auto;
+  overflow-y: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
