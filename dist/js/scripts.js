@@ -687,7 +687,6 @@ function formFieldsInit(options = { viewPass: true, autoHeight: false }) {
       targetElement.hasAttribute('data-validate') ? formValidate.removeError(targetElement) : null;
     }
   });
-
   document.body.addEventListener("focusout", function (e) {
     const targetElement = e.target;
     if ((targetElement.tagName === 'INPUT' || targetElement.tagName === 'TEXTAREA')) {
@@ -695,61 +694,26 @@ function formFieldsInit(options = { viewPass: true, autoHeight: false }) {
         targetElement.classList.remove('_form-focus');
         targetElement.parentElement.classList.remove('_form-focus');
       }
-
-      if (targetElement.value.trim()) {
-        targetElement.parentElement.classList.add('filled');
-      } else {
-        targetElement.parentElement.classList.remove('filled');
-      }
-
       targetElement.hasAttribute('data-validate') ? formValidate.validateInput(targetElement) : null;
-
-      const form = targetElement.closest('form');
-      if (form) {
-        const submitBtn = form.querySelector('.btn.disabled');
-        if (submitBtn) {
-          setTimeout(() => {
-            const requiredFields = form.querySelectorAll('[data-required]');
-            let allFilled = true;
-
-            requiredFields.forEach(field => {
-              if (field.type === 'checkbox') {
-                if (!field.checked) allFilled = false;
-              } else {
-                if (!field.value.trim()) allFilled = false;
-              }
-            });
-
-            if (allFilled) {
-              submitBtn.classList.remove('disabled');
-            } else {
-              submitBtn.classList.add('disabled');
-            }
-          }, 50);
-        }
-      }
     }
   });
-
   if (options.viewPass) {
     document.addEventListener("click", function (e) {
       const targetElement = e.target;
       if (targetElement.closest('.form__viewpass')) {
         const viewpassBlock = targetElement.closest('.form__viewpass');
-        const parentInputBlock = viewpassBlock.closest('.form__input');
-        const input = parentInputBlock ? parentInputBlock.querySelector('input') : null;
+        const input = viewpassBlock.closest('.form__input').querySelector('input');
 
         if (input) {
           const isActive = viewpassBlock.classList.contains('_viewpass-active');
           input.setAttribute("type", isActive ? "password" : "text");
           viewpassBlock.classList.toggle('_viewpass-active');
         } else {
-          console.error('Input не найден для переключения видимости пароля!');
+          console.error('Input не найден!');
         }
       }
     });
   }
-
   if (options.autoHeight) {
     const textareas = document.querySelectorAll('textarea[data-autoheight]');
     if (textareas.length) {
@@ -758,9 +722,7 @@ function formFieldsInit(options = { viewPass: true, autoHeight: false }) {
           Number(textarea.dataset.autoheightMin) : Number(textarea.offsetHeight);
         const maxHeight = textarea.hasAttribute('data-autoheight-max') ?
           Number(textarea.dataset.autoheightMax) : Infinity;
-
-        setHeight(textarea, Math.min(startHeight, maxHeight));
-
+        setHeight(textarea, Math.min(startHeight, maxHeight))
         textarea.addEventListener('input', () => {
           if (textarea.scrollHeight > startHeight) {
             textarea.style.height = `auto`;
@@ -768,14 +730,12 @@ function formFieldsInit(options = { viewPass: true, autoHeight: false }) {
           }
         });
       });
-
       function setHeight(textarea, height) {
         textarea.style.height = `${height}px`;
       }
     }
   }
 }
-
 formFieldsInit({
   viewPass: true,
   autoHeight: false
@@ -839,40 +799,22 @@ let formValidate = {
   addError(formRequiredItem) {
     formRequiredItem.classList.add('_form-error');
     formRequiredItem.parentElement.classList.add('_form-error');
-
-    const formInput = formRequiredItem.closest('.form__input');
-    if (formInput) {
-      const existingError = formInput.querySelector('.form-error');
-      if (existingError) existingError.remove();
-    }
-
+    let inputError = formRequiredItem.parentElement.querySelector('.form__error');
+    if (inputError) formRequiredItem.parentElement.removeChild(inputError);
     if (formRequiredItem.dataset.error) {
-      if (formInput) {
-        formInput.insertAdjacentHTML('beforeend', `<div class="form-error">${formRequiredItem.dataset.error}</div>`);
-      } else {
-        formRequiredItem.parentElement.insertAdjacentHTML('afterend', `<div class="form-error">${formRequiredItem.dataset.error}</div>`);
-      }
+      formRequiredItem.parentElement.insertAdjacentHTML('beforeend', `<div class="form__error">${formRequiredItem.dataset.error}</div>`);
     }
   },
   removeError(formRequiredItem) {
     formRequiredItem.classList.remove('_form-error');
     formRequiredItem.parentElement.classList.remove('_form-error');
-
-    const formInput = formRequiredItem.closest('.form__input');
-    if (formInput) {
-      const errorMsg = formInput.querySelector('.form-error');
-      if (errorMsg) errorMsg.remove();
+    if (formRequiredItem.parentElement.querySelector('.form__error')) {
+      formRequiredItem.parentElement.removeChild(formRequiredItem.parentElement.querySelector('.form__error'));
     }
-
-    const errorMsgParent = formRequiredItem.parentElement.parentElement?.querySelector('.form-error');
-    if (errorMsgParent) errorMsgParent.remove();
   },
   addSuccess(formRequiredItem) {
     formRequiredItem.classList.add('_form-success');
     formRequiredItem.parentElement.classList.add('_form-success');
-    if (formRequiredItem.value.trim()) {
-      formRequiredItem.parentElement.classList.add('filled');
-    }
   },
   removeSuccess(formRequiredItem) {
     formRequiredItem.classList.remove('_form-success');
@@ -890,19 +832,14 @@ let formValidate = {
         el.classList.remove('_form-success');
         el.parentElement.classList.remove('_form-success');
 
-        el.classList.remove('_form-error');
-        el.parentElement.classList.remove('_form-error');
-
         el.parentElement.classList.remove('filled');
 
-        this.removeError(el);
+        formValidate.removeError(el);
 
         if (el.classList.contains('telephone') && el.clearFilled) {
           el.clearFilled();
         }
       }
-
-      form.querySelectorAll('.form-error').forEach(error => error.remove());
 
       let checkboxes = form.querySelectorAll('.checkbox__input');
       if (checkboxes.length > 0) {
@@ -914,7 +851,7 @@ let formValidate = {
         }
       }
 
-      if (typeof modules_flsModules !== 'undefined' && modules_flsModules.select) {
+      if (modules_flsModules.select) {
         let selects = form.querySelectorAll('div.select');
         if (selects.length) {
           for (let index = 0; index < selects.length; index++) {
@@ -955,21 +892,16 @@ function formSubmit() {
         const formData = new FormData(form);
 
         form.classList.add('_sending');
-        try {
-          const response = await fetch(formAction, {
-            method: formMethod,
-            body: formData
-          });
-          if (response.ok) {
-            let responseResult = await response.json();
-            form.classList.remove('_sending');
-            formSent(form, responseResult);
-          } else {
-            alert("Помилка сервера");
-            form.classList.remove('_sending');
-          }
-        } catch (err) {
-          alert("Помилка з'єднання");
+        const response = await fetch(formAction, {
+          method: formMethod,
+          body: formData
+        });
+        if (response.ok) {
+          let responseResult = await response.json();
+          form.classList.remove('_sending');
+          formSent(form, responseResult);
+        } else {
+          alert("Помилка");
           form.classList.remove('_sending');
         }
       } else if (form.hasAttribute('data-dev')) {
@@ -980,9 +912,7 @@ function formSubmit() {
       e.preventDefault();
       if (form.querySelector('._form-error') && form.hasAttribute('data-goto-error')) {
         const formGoToErrorClass = form.dataset.gotoError ? form.dataset.gotoError : '._form-error';
-        if (typeof gotoBlock === 'function') {
-          gotoBlock(formGoToErrorClass, true, 1000);
-        }
+        gotoBlock(formGoToErrorClass, true, 1000);
       }
     }
   }
@@ -1002,7 +932,7 @@ function formSubmit() {
     });
 
     setTimeout(() => {
-      if (typeof modules_flsModules !== 'undefined' && modules_flsModules.popup) {
+      if (modules_flsModules.popup) {
         const popup = form.dataset.popupMessage;
         popup ? modules_flsModules.popup.open(popup) : null;
       }
@@ -1011,216 +941,7 @@ function formSubmit() {
     formValidate.formClean(form);
   }
 }
-
-function initFormValidationObserver() {
-  const forms = document.querySelectorAll('form');
-
-  forms.forEach(form => {
-    const submitBtn = form.querySelector('.btn.disabled');
-    if (!submitBtn) return;
-
-    function checkRequiredFields() {
-      const requiredFields = form.querySelectorAll('[data-required]');
-      let allFilled = true;
-
-      requiredFields.forEach(field => {
-        if (field.type === 'checkbox') {
-          if (!field.checked) {
-            allFilled = false;
-          }
-        }
-        else {
-          const value = field.value.trim();
-          const hasValue = value !== '';
-
-          if (field.dataset.required === 'email' && hasValue) {
-            const isValidEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(value);
-            if (!isValidEmail) {
-              allFilled = false;
-            }
-          }
-          else if (field.dataset.validate === 'password-confirm') {
-            const passwordInput = document.getElementById('password');
-            if (passwordInput && field.value !== passwordInput.value) {
-              allFilled = false;
-            }
-          }
-          else if (!hasValue) {
-            allFilled = false;
-          }
-        }
-      });
-
-      if (allFilled) {
-        submitBtn.classList.remove('disabled');
-      } else {
-        submitBtn.classList.add('disabled');
-      }
-
-      return allFilled;
-    }
-
-    checkRequiredFields();
-
-    const requiredFields = form.querySelectorAll('[data-required]');
-    requiredFields.forEach(field => {
-      if (field.tagName === 'INPUT' || field.tagName === 'TEXTAREA' || field.tagName === 'SELECT') {
-        field.addEventListener('input', () => {
-          setTimeout(checkRequiredFields, 0);
-        });
-        field.addEventListener('change', () => {
-          setTimeout(checkRequiredFields, 0);
-        });
-      }
-
-      if (field.type === 'checkbox') {
-        field.addEventListener('change', () => {
-          setTimeout(checkRequiredFields, 0);
-        });
-      }
-    });
-
-    form.addEventListener('focusout', (e) => {
-      const target = e.target;
-      if (target.hasAttribute && target.hasAttribute('data-required')) {
-        setTimeout(checkRequiredFields, 100);
-      }
-    });
-  });
-}
-
-function initCodeInputs() {
-  const codeInputs = document.querySelectorAll('.popup-code__inputs input');
-  if (!codeInputs.length) return;
-
-  function setInputValue(input, value) {
-    const digits = value.replace(/\D/g, '');
-    input.value = digits.slice(0, 1);
-    return input.value;
-  }
-
-  function focusNextInput(currentInput) {
-    const inputs = Array.from(currentInput.parentElement.querySelectorAll('input'));
-    const currentIndex = inputs.indexOf(currentInput);
-    if (currentIndex < inputs.length - 1) {
-      inputs[currentIndex + 1].focus();
-      return true;
-    }
-    return false;
-  }
-
-  function focusPrevInput(currentInput) {
-    const inputs = Array.from(currentInput.parentElement.querySelectorAll('input'));
-    const currentIndex = inputs.indexOf(currentInput);
-    if (currentIndex > 0) {
-      inputs[currentIndex - 1].focus();
-      return true;
-    }
-    return false;
-  }
-
-  codeInputs.forEach((input, index) => {
-    input.addEventListener('input', (e) => {
-      const oldValue = input.value;
-      const newValue = setInputValue(input, input.value);
-
-      if (newValue && newValue !== oldValue) {
-        focusNextInput(input);
-      }
-    });
-
-    input.addEventListener('keydown', (e) => {
-      if (e.key === 'Backspace') {
-        if (input.value === '') {
-          focusPrevInput(input);
-        } else {
-          input.value = '';
-          e.preventDefault();
-        }
-      }
-
-      if (e.key === 'Delete') {
-        input.value = '';
-        e.preventDefault();
-      }
-
-      if (e.key === 'ArrowLeft') {
-        focusPrevInput(input);
-      }
-
-      if (e.key === 'ArrowRight') {
-        focusNextInput(input);
-      }
-
-      if (e.key === 'Home') {
-        e.preventDefault();
-        codeInputs[0].focus();
-      }
-
-      if (e.key === 'End') {
-        e.preventDefault();
-        codeInputs[codeInputs.length - 1].focus();
-      }
-    });
-
-    input.addEventListener('paste', (e) => {
-      e.preventDefault();
-      const pastedText = (e.clipboardData || window.clipboardData).getData('text');
-      const digits = pastedText.replace(/\D/g, '').split('');
-
-      digits.forEach((digit, i) => {
-        const targetInput = codeInputs[index + i];
-        if (targetInput && digit) {
-          targetInput.value = digit;
-        }
-      });
-
-      const nextEmptyIndex = codeInputs.findIndex(inp => inp.value === '');
-      if (nextEmptyIndex !== -1) {
-        codeInputs[nextEmptyIndex].focus();
-      } else {
-        codeInputs[codeInputs.length - 1].focus();
-      }
-
-      const form = input.closest('form');
-      if (form) {
-        const submitBtn = form.querySelector('.btn.disabled');
-        if (submitBtn) {
-          setTimeout(() => {
-            const requiredFields = form.querySelectorAll('[data-required]');
-            let allFilled = true;
-
-            requiredFields.forEach(field => {
-              if (!field.value.trim()) allFilled = false;
-            });
-
-            if (allFilled) {
-              submitBtn.classList.remove('disabled');
-            } else {
-              submitBtn.classList.add('disabled');
-            }
-          }, 50);
-        }
-      }
-    });
-  });
-
-  codeInputs[0].focus();
-}
-
-function clearCodeInputs() {
-  const codeInputs = document.querySelectorAll('.popup-code__inputs input');
-  codeInputs.forEach(input => {
-    input.value = '';
-  });
-  if (codeInputs.length) {
-    codeInputs[0].focus();
-  }
-}
-
-initCodeInputs();
 formSubmit();
-initFormValidationObserver();
 
 //========================================================================================================================================================
 

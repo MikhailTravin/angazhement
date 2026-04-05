@@ -3122,9 +3122,9 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
+  width: -webkit-min-content;
   border-bottom: 1px solid rgba(210, 209, 204, 0.2);
 }
 .article-table__item:last-child {
