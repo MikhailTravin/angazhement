@@ -1747,11 +1747,6 @@
 
     &__item {
         display: flex;
-        width: max-content;
-        border-bottom: 1px solid rgba(210, 209, 204, 0.05);
-        &:last-child {
-            border-bottom: none;
-        }
     }
 
     // .article-space__title
@@ -1760,6 +1755,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        border-bottom: 1px solid rgba(210, 209, 204, 0.05);
         border-right: 1px solid rgba(210, 209, 204, 0.05);
         font-weight: 600;
         font-size: 13px;
