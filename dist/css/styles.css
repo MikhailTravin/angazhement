@@ -3247,13 +3247,6 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  border-bottom: 1px solid rgba(210, 209, 204, 0.05);
-}
-.article-space__item:last-child {
-  border-bottom: none;
 }
 .article-space__title {
   display: -webkit-box;
@@ -3265,6 +3258,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-bottom: 1px solid rgba(210, 209, 204, 0.05);
   border-right: 1px solid rgba(210, 209, 204, 0.05);
   font-weight: 600;
   font-size: 13px;
