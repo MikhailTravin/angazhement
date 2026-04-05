@@ -418,7 +418,7 @@
 
     &__slider {
         position: relative;
-        overflow: auto;
+        overflow-x: auto;
         -ms-overflow-style: none;
         scrollbar-width: none;
         &::-webkit-scrollbar {
@@ -1641,7 +1641,7 @@
     // .article-table__body
 
     &__body {
-        overflow: auto;
+        overflow-x: auto;
         -ms-overflow-style: none;
         scrollbar-width: none;
         &::-webkit-scrollbar {
@@ -1735,7 +1735,7 @@
         border: 1px solid rgba(210, 209, 204, 0.2);
         width: 100%;
         border-radius: 8px;
-        overflow: auto;
+        overflow-x: auto;
         -ms-overflow-style: none;
         scrollbar-width: none;
         &::-webkit-scrollbar {
