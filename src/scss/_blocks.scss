@@ -69,12 +69,12 @@
         }
         p {
             font-weight: 700;
-            font-size: 15px;
-            line-height: 120%;
+            font-size: 0.9375rem;
+            line-height: 1.2;
             letter-spacing: 0.01em;
             color: var(--white-60);
             @media (max-width: 768px) {
-                font-size: 12px;
+                font-size: 0.75rem;
                 letter-spacing: 0.02em;
             }
         }
@@ -85,11 +85,11 @@
     &__title {
         font-family: var(--second-family);
         font-weight: 500;
-        font-size: 44px;
-        line-height: 120%;
+        font-size: 2.75rem;
+        line-height: 1.2;
         letter-spacing: 0em;
         @media (max-width: 768px) {
-            font-size: 24px;
+            font-size: 1.5rem;
             letter-spacing: 0.01em;
         }
     }
@@ -97,37 +97,6 @@
     // .block-intro__pagination
 
     &__pagination {
-    }
-}
-
-.special-vision {
-    // Блок intro
-    .block-intro {
-        &__slide {
-            &::before {
-                background: rgba(0, 0, 0, 0.6) !important; // Затемняем фон для контраста с белым текстом
-            }
-        }
-
-        &__titles {
-            p {
-                color: #ffffff !important;
-                font-size: 18px !important;
-
-                @media (max-width: 768px) {
-                    font-size: 16px !important;
-                }
-            }
-        }
-
-        &__title {
-            color: #ffffff !important;
-            font-size: 52px !important;
-
-            @media (max-width: 768px) {
-                font-size: 32px !important;
-            }
-        }
     }
 }
 
@@ -208,16 +177,16 @@
         }
         p {
             font-weight: 700;
-            font-size: 15px;
+            font-size: 0.9375rem;
             letter-spacing: 0.01em;
-            line-height: 125%;
+            line-height: 1.25;
             color: var(--white-60);
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
             @media (max-width: 768px) {
-                font-size: 12px;
+                font-size: 0.75rem;
                 letter-spacing: 0.02em;
             }
         }
@@ -228,8 +197,8 @@
     &__title {
         font-family: var(--second-family);
         font-weight: 500;
-        font-size: 44px;
-        line-height: 125%;
+        font-size: 2.75rem;
+        line-height: 1.25;
         letter-spacing: 0em;
         display: -webkit-box;
         -webkit-line-clamp: 4;
@@ -237,11 +206,11 @@
         overflow: hidden;
         transition: color 0.3s;
         @media (max-width: 992px) {
-            font-size: 32px;
+            font-size: 2rem;
             letter-spacing: 0.01em;
         }
         @media (max-width: 768px) {
-            font-size: 18px;
+            font-size: 1.125rem;
         }
     }
 
@@ -289,22 +258,22 @@
         gap: 4px;
         font-family: var(--second-family);
         font-weight: 600;
-        font-size: 12px;
-        line-height: 125%;
+        font-size: 0.75rem;
+        line-height: 1.25;
         transition: opacity 0.3s;
         &:hover {
             opacity: 0.7;
         }
         @media (max-width: 768px) {
-            font-size: 11px;
+            font-size: 0.687rem;
         }
         span {
             font-weight: 600;
-            font-size: 28px;
-            line-height: 100%;
+            font-size: 1.75rem;
+            line-height: 1;
             color: var(--red);
             @media (max-width: 768px) {
-                font-size: 24px;
+                font-size: 1.5rem;
             }
         }
     }
@@ -453,12 +422,12 @@
 
     &__title {
         font-weight: 500;
-        font-size: 13px;
-        line-height: 120%;
+        font-size: 0.8125rem;
+        line-height: 1.2;
         letter-spacing: 0.02em;
         color: rgba(42, 42, 42, 0.6);
         @media (max-width: 768px) {
-            font-size: 12px;
+            font-size: 0.75rem;
         }
     }
 
@@ -482,8 +451,8 @@
         width: 33px;
         height: 55px;
         font-weight: 700;
-        font-size: 17px;
-        line-height: 140%;
+        font-size: 1.062rem;
+        line-height: 1.4;
         letter-spacing: 0.01em;
         color: var(--black);
         display: flex;
@@ -494,9 +463,9 @@
         background-color: transparent;
         transition: background-color 0.3s;
         span {
-            line-height: 120%;
+            line-height: 1.2;
             font-weight: 500;
-            font-size: 12px;
+            font-size: 0.75rem;
             letter-spacing: 0.02em;
             opacity: 0.6;
             &.red {
@@ -504,7 +473,7 @@
                 color: var(--red);
             }
             @media (max-width: 768px) {
-                font-size: 11px;
+                font-size: 0.687rem;
             }
         }
         &:hover {
@@ -514,7 +483,7 @@
             background-color: rgba(42, 42, 42, 0.1);
         }
         @media (max-width: 768px) {
-            font-size: 16px;
+            font-size: 1rem;
             width: 31px;
             height: 51px;
         }
@@ -680,12 +649,12 @@
         }
         p {
             font-weight: 600;
-            font-size: 15px;
-            line-height: 130%;
+            font-size: 0.9375rem;
+            line-height: 1.3;
             letter-spacing: 0.01em;
             color: var(--white-60);
             @media (max-width: 768px) {
-                font-size: 11px;
+                font-size: 0.687rem;
                 letter-spacing: 0.02em;
             }
         }
@@ -697,14 +666,14 @@
         transition: color 0.3s;
         font-family: var(--second-family);
         font-weight: 500;
-        font-size: 32px;
+        font-size: 2rem;
         letter-spacing: 0.01em;
-        line-height: 120%;
+        line-height: 1.2;
         @media (max-width: 1300px) {
-            font-size: 24px;
+            font-size: 1.5rem;
         }
         @media (max-width: 768px) {
-            font-size: 14px;
+            font-size: 0.875rem;
         }
     }
 }
@@ -784,11 +753,11 @@
     &__name {
         font-family: var(--second-family);
         font-weight: 500;
-        font-size: 15px;
-        line-height: 120%;
+        font-size: 0.9375rem;
+        line-height: 1.2;
         letter-spacing: 0.01em;
         @media (max-width: 768px) {
-            font-size: 13px;
+            font-size: 0.8125rem;
         }
     }
 
@@ -796,14 +765,14 @@
 
     &__value {
         font-weight: 600;
-        font-size: 15px;
+        font-size: 0.9375rem;
         letter-spacing: 0.01em;
         text-decoration: underline;
         text-decoration-skip-ink: none;
         color: #40a4bc;
         transition: color 0.3s;
         @media (max-width: 768px) {
-            font-size: 13px;
+            font-size: 0.8125rem;
         }
         &:hover {
             color: var(--blue);
@@ -815,10 +784,10 @@
     &__title {
         font-family: var(--second-family);
         font-weight: 500;
-        font-size: 32px;
-        line-height: 120%;
+        font-size: 2rem;
+        line-height: 1.2;
         @media (max-width: 768px) {
-            font-size: 24px;
+            font-size: 1.5rem;
         }
     }
 
@@ -878,11 +847,11 @@
     &__name {
         font-family: var(--second-family);
         font-weight: 500;
-        font-size: 20px;
-        line-height: 120%;
+        font-size: 1.25rem;
+        line-height: 1.2;
         letter-spacing: 0.01em;
         @media (max-width: 550px) {
-            font-size: 16px;
+            font-size: 1rem;
         }
     }
 
@@ -890,12 +859,12 @@
 
     &__subname {
         font-weight: 600;
-        font-size: 13px;
-        line-height: 120%;
+        font-size: 0.8125rem;
+        line-height: 1.2;
         letter-spacing: 0.02em;
         color: var(--white-60);
         @media (max-width: 550px) {
-            font-size: 12px;
+            font-size: 0.75rem;
         }
     }
 }
@@ -936,8 +905,8 @@
     &__title {
         font-family: var(--second-family);
         font-weight: 500;
-        font-size: 16px;
-        line-height: 120%;
+        font-size: 1rem;
+        line-height: 1.2;
         margin: 0px 0px 4px 0px;
         display: none;
         @media (max-width: 992px) {
@@ -957,8 +926,8 @@
         min-height: 33px;
         font-family: var(--second-family);
         font-weight: 500;
-        font-size: 14px;
-        line-height: 120%;
+        font-size: 0.875rem;
+        line-height: 1.2;
         background-color: var(--white);
         color: var(--black);
         transition:
@@ -1048,8 +1017,8 @@
         gap: 18px;
         p {
             font-weight: 600;
-            font-size: 15px;
-            line-height: 160%;
+            font-size: 0.9375rem;
+            line-height: 1.6;
             letter-spacing: 0.01em;
         }
     }
@@ -1138,9 +1107,9 @@
         gap: 8px;
         p {
             font-weight: 600;
-            font-size: 13px;
+            font-size: 0.8125rem;
             letter-spacing: 0.02em;
-            line-height: 130%;
+            line-height: 1.3;
             color: var(--white-60);
         }
     }
@@ -1151,8 +1120,8 @@
         transition: color 0.3s;
         font-family: var(--second-family);
         font-weight: 500;
-        font-size: 20px;
-        line-height: 120%;
+        font-size: 1.25rem;
+        line-height: 1.2;
         letter-spacing: 0.01em;
         display: -webkit-box;
         -webkit-line-clamp: 2;
@@ -1263,23 +1232,23 @@
         .title1 {
             font-family: var(--second-family);
             font-weight: 500;
-            font-size: 44px;
-            line-height: 120%;
+            font-size: 2.75rem;
+            line-height: 1.2;
             letter-spacing: 0em;
             color: var(--white);
             text-align: left;
             @media (max-width: 768px) {
-                font-size: 24px;
+                font-size: 1.5rem;
                 letter-spacing: 0.01em;
             }
         }
         p {
             font-weight: 700;
-            font-size: 15px;
+            font-size: 0.9375rem;
             letter-spacing: 0.01em;
             color: rgba(210, 209, 204, 0.8);
             @media (max-width: 768px) {
-                font-size: 13px;
+                font-size: 0.8125rem;
                 letter-spacing: 0.02em;
             }
         }
@@ -1293,11 +1262,11 @@
                 gap: 8px;
                 align-items: center;
                 font-weight: 700;
-                font-size: 14px;
+                font-size: 0.875rem;
                 letter-spacing: 0.01em;
                 color: rgba(210, 209, 204, 0.8);
                 @media (max-width: 768px) {
-                    font-size: 13px;
+                    font-size: 0.8125rem;
                     letter-spacing: 0.02em;
                 }
                 &::after {
@@ -1329,12 +1298,12 @@
         }
         p {
             font-weight: 600;
-            font-size: 15px;
-            line-height: 130%;
+            font-size: 0.9375rem;
+            line-height: 1.3;
             letter-spacing: 0.01em;
             color: var(--white-60);
             @media (max-width: 768px) {
-                font-size: 13px;
+                font-size: 0.8125rem;
                 letter-spacing: 0.02em;
                 font-weight: 500;
             }
@@ -1363,7 +1332,7 @@
         }
         .title2 {
             @media (max-width: 768px) {
-                font-size: 20px;
+                font-size: 1.25rem;
             }
         }
     }
@@ -1379,8 +1348,8 @@
         }
         a {
             font-weight: 600;
-            font-size: 13px;
-            line-height: 185%;
+            font-size: 0.8125rem;
+            line-height: 1.85;
             letter-spacing: 0.02em;
             text-decoration: underline;
             text-decoration-skip-ink: none;
@@ -1391,12 +1360,12 @@
         }
         p {
             font-weight: 600;
-            font-size: 15px;
-            line-height: 160%;
+            font-size: 0.9375rem;
+            line-height: 1.6;
             letter-spacing: 0.01em;
             @media (max-width: 768px) {
-                font-size: 13px;
-                line-height: 154%;
+                font-size: 0.8125rem;
+                line-height: 1.54;
                 letter-spacing: 0.02em;
             }
         }
@@ -1489,19 +1458,19 @@
         flex-direction: column;
         gap: 8px;
         .title1 {
-            font-size: 24px;
+            font-size: 1.5rem;
             text-align: left;
             color: var(--white);
             margin: 0px 0px 8px 0px;
         }
         p {
             font-weight: 600;
-            font-size: 13px;
+            font-size: 0.8125rem;
             line-height: 162%;
             letter-spacing: 0.02em;
             @media (max-width: 768px) {
-                font-size: 12px;
-                line-height: 175%;
+                font-size: 0.75rem;
+                line-height: 1.75;
             }
         }
     }
@@ -1539,11 +1508,11 @@
 
     &__data {
         font-weight: 600;
-        font-size: 13px;
-        line-height: 120%;
+        font-size: 0.8125rem;
+        line-height: 1.2;
         letter-spacing: 0.02em;
         @media (max-width: 768px) {
-            font-size: 12px;
+            font-size: 0.75rem;
         }
     }
 
@@ -1554,7 +1523,7 @@
         flex-direction: column;
         gap: 24px;
         .title1 {
-            font-size: 24px;
+            font-size: 1.5rem;
             text-align: left;
             color: var(--white);
         }
@@ -1585,12 +1554,12 @@
 
     &__list-title {
         font-weight: 600;
-        font-size: 15px;
-        line-height: 160%;
+        font-size: 0.9375rem;
+        line-height: 1.6;
         letter-spacing: 0.01em;
         @media (max-width: 550px) {
-            font-size: 13px;
-            line-height: 150%;
+            font-size: 0.8125rem;
+            line-height: 1.5;
         }
     }
 
@@ -1598,12 +1567,12 @@
 
     &__name {
         font-weight: 600;
-        font-size: 15px;
-        line-height: 160%;
+        font-size: 0.9375rem;
+        line-height: 1.6;
         letter-spacing: 0.01em;
         @media (max-width: 550px) {
-            font-size: 13px;
-            line-height: 150%;
+            font-size: 0.8125rem;
+            line-height: 1.5;
         }
     }
 
@@ -1625,12 +1594,12 @@
 
     &__value {
         font-weight: 600;
-        font-size: 15px;
-        line-height: 160%;
+        font-size: 0.9375rem;
+        line-height: 1.6;
         letter-spacing: 0.01em;
         @media (max-width: 550px) {
-            font-size: 13px;
-            line-height: 150%;
+            font-size: 0.8125rem;
+            line-height: 1.5;
         }
     }
 }
@@ -1670,9 +1639,9 @@
 
     &__title {
         font-weight: 600;
-        font-size: 14px;
+        font-size: 0.875rem;
         letter-spacing: 0.01em;
-        line-height: 120%;
+        line-height: 1.2;
         border-bottom: 1px solid rgba(210, 209, 204, 0.2);
         border-right: 1px solid rgba(210, 209, 204, 0.05);
         padding: 5px 12px;
@@ -1758,9 +1727,9 @@
         border-bottom: 1px solid rgba(210, 209, 204, 0.05);
         border-right: 1px solid rgba(210, 209, 204, 0.05);
         font-weight: 600;
-        font-size: 13px;
+        font-size: 0.8125rem;
         padding: 5px;
-        line-height: 120%;
+        line-height: 1.2;
         letter-spacing: 0.02em;
         flex: 0 0 36px;
         min-height: 38px;
@@ -1907,8 +1876,8 @@
         gap: 8px;
         p {
             font-weight: 700;
-            font-size: 14px;
-            line-height: 130%;
+            font-size: 0.875rem;
+            line-height: 1.3;
             letter-spacing: 0.01em;
         }
     }
@@ -1918,8 +1887,8 @@
     &__title {
         font-family: var(--second-family);
         font-weight: 700;
-        line-height: 130%;
-        font-size: 44px;
+        line-height: 1.3;
+        font-size: 2.75rem;
         letter-spacing: 0em;
         @media (max-width: 992px) {
             br {
@@ -1927,7 +1896,7 @@
             }
         }
         @media (max-width: 768px) {
-            font-size: 18px;
+            font-size: 1.125rem;
             letter-spacing: 0.01em;
         }
     }
@@ -1947,8 +1916,8 @@
 
     &__mail {
         font-weight: 700;
-        font-size: 14px;
-        line-height: 130%;
+        font-size: 0.875rem;
+        line-height: 1.3;
         letter-spacing: 0.01em;
     }
 
@@ -1965,11 +1934,11 @@
     &__phone {
         font-family: var(--second-family);
         font-weight: 700;
-        font-size: 32px;
-        line-height: 130%;
+        font-size: 2rem;
+        line-height: 1.3;
         letter-spacing: 0.01em;
         @media (max-width: 768px) {
-            font-size: 24px;
+            font-size: 1.5rem;
         }
         a {
             transition: color 0.3s;
@@ -1983,8 +1952,8 @@
 
     &__work {
         font-weight: 700;
-        font-size: 14px;
-        line-height: 130%;
+        font-size: 0.875rem;
+        line-height: 1.3;
         letter-spacing: 0.01em;
     }
 
@@ -2061,10 +2030,10 @@
     &__title {
         font-family: var(--second-family);
         font-weight: 500;
-        font-size: 24px;
-        line-height: 120%;
+        font-size: 1.5rem;
+        line-height: 1.2;
         @media (max-width: 768px) {
-            font-size: 18px;
+            font-size: 1.125rem;
         }
     }
 
@@ -2111,8 +2080,8 @@
     &__title {
         font-family: var(--second-family);
         font-weight: 500;
-        font-size: 15px;
-        line-height: 130%;
+        font-size: 0.9375rem;
+        line-height: 1.3;
         letter-spacing: 0.01em;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         padding: 0px 0px 16px 0px;
@@ -2126,12 +2095,12 @@
         gap: 4px;
         p {
             font-weight: 600;
-            font-size: 13px;
-            line-height: 130%;
+            font-size: 0.8125rem;
+            line-height: 1.3;
             letter-spacing: 0.02em;
             color: var(--white-60);
             @media (max-width: 768px) {
-                font-size: 12px;
+                font-size: 0.75rem;
             }
         }
     }
@@ -2140,8 +2109,8 @@
 
     &__name {
         font-weight: 600;
-        font-size: 15px;
-        line-height: 130%;
+        font-size: 0.9375rem;
+        line-height: 1.3;
         letter-spacing: 0.01em;
         color: var(--red);
         transition: opacity 0.3s;
@@ -2155,8 +2124,8 @@
     &__phones {
         a {
             font-weight: 600;
-            font-size: 15px;
-            line-height: 130%;
+            font-size: 0.9375rem;
+            line-height: 1.3;
             letter-spacing: 0.01em;
             transition: opacity 0.3s;
             &:hover {

@@ -471,3 +471,17 @@ a {
     margin-left: 2px;
   }
 }
+
+.a11y-start-icon {
+  border: 2px solid #fe2d2d !important;
+}
+.a11y-start-icon__icon {
+  stroke: #fe2d2d !important;
+}
+.a11y-start-icon__badge {
+  background: #fe2d2d !important;
+}
+html[data-a11y-active="true"][data-a11y-color-contrast]
+  button.a11y-panel__option-btn.a11y-panel__images-button.a11y-panel__option-btn--active {
+  border-color: #fe2d2d !important;
+}
