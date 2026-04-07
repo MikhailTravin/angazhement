@@ -93,11 +93,11 @@
         gap: 15px;
         p {
             font-weight: 700;
-            font-size: 16px;
+            font-size: 1rem;
             letter-spacing: 0.01em;
-            line-height: 120%;
+            line-height: 1.2;
             @media (max-width: 768px) {
-                font-size: 14px;
+                font-size: 0.875rem;
             }
         }
     }
@@ -114,12 +114,12 @@
 
     &__contact {
         font-weight: 700;
-        font-size: 16px;
-        line-height: 120%;
+        font-size: 1rem;
+        line-height: 1.2;
         letter-spacing: 0.01em;
         color: var(--white-60);
         @media (max-width: 768px) {
-            font-size: 14px;
+            font-size: 0.875rem;
         }
         a {
             white-space: nowrap;
@@ -144,12 +144,12 @@
     &__phone {
         white-space: nowrap;
         font-weight: 700;
-        font-size: 32px;
+        font-size: 2rem;
         letter-spacing: 0.01em;
-        line-height: 120%;
+        line-height: 1.2;
         color: var(--red);
         @media (max-width: 650px) {
-            font-size: 24px;
+            font-size: 1.5rem;
         }
         a {
             transition: opacity 0.3s;
@@ -163,11 +163,11 @@
 
     &__work {
         font-weight: 700;
-        font-size: 16px;
-        line-height: 120%;
+        font-size: 1rem;
+        line-height: 1.2;
         letter-spacing: 0.01em;
         @media (max-width: 650px) {
-            font-size: 13px;
+            font-size: 0.8125rem;
         }
     }
 }
@@ -207,8 +207,8 @@
             li {
                 a {
                     font-weight: 600;
-                    font-size: 14px;
-                    line-height: 120%;
+                    font-size: 0.875rem;
+                    line-height: 1.2;
                     &:hover {
                         color: var(--red);
                     }
@@ -221,8 +221,8 @@
 
     &__title {
         font-weight: 600;
-        font-size: 15px;
-        line-height: 120%;
+        font-size: 0.9375rem;
+        line-height: 1.2;
         text-transform: uppercase;
         color: var(--white-40);
     }
@@ -246,14 +246,14 @@
         }
         li {
             font-weight: 400;
-            font-size: 13px;
+            font-size: 0.8125rem;
             color: var(--white-60);
-            line-height: 120%;
+            line-height: 1.2;
             @media (max-width: 992px) {
                 text-align: center;
             }
             @media (max-width: 768px) {
-                font-size: 11px;
+                font-size: 0.687rem;
             }
             @media (max-width: 550px) {
                 text-align: left;
@@ -262,121 +262,6 @@
                 transition: color 0.3s;
                 &:hover {
                     color: var(--white);
-                }
-            }
-        }
-    }
-}
-
-//========================================================================================================================================================
-
-.special-vision {
-    // Футер
-    .footer {
-        background: #ffffff !important;
-        border-top: 2px solid #000000 !important;
-    }
-
-    // Верхняя часть футера
-    .footer-top {
-        &__logo {
-            img {
-                filter: brightness(0) !important; // Черное лого
-            }
-        }
-
-        &__bg {
-            img {
-                filter: brightness(0.9) !important;
-                border: 1px solid #000000 !important;
-            }
-        }
-    }
-
-    // Контакты в футере
-    .footer-contacts {
-        &__address {
-            p {
-                color: #000000 !important;
-                font-size: 18px !important;
-            }
-        }
-
-        &__contact {
-            color: #000000 !important;
-            font-size: 18px !important;
-
-            a {
-                color: #0033cc !important;
-
-                &:hover {
-                    color: #000000 !important;
-                }
-            }
-        }
-
-        &__phone {
-            font-size: 38px !important;
-
-            @media (max-width: 650px) {
-                font-size: 28px !important;
-            }
-
-            a {
-                color: #0033cc !important;
-            }
-        }
-
-        &__work {
-            color: #000000 !important;
-            font-size: 18px !important;
-
-            @media (max-width: 650px) {
-                font-size: 16px !important;
-            }
-        }
-    }
-
-    // Меню в футере
-    .footer-menu {
-        &__title {
-            color: #000000 !important;
-            font-size: 18px !important;
-            font-weight: 700 !important;
-        }
-
-        &__column {
-            ul {
-                li {
-                    a {
-                        color: #000000 !important;
-                        font-size: 16px !important;
-
-                        &:hover {
-                            color: #0033cc !important;
-                            text-decoration: underline !important;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    // Нижняя часть футера
-    .footer-bottom {
-        border-top: 1px solid #000000 !important;
-
-        ul {
-            li {
-                color: #000000 !important;
-                font-size: 15px !important;
-
-                a {
-                    color: #0033cc !important;
-
-                    &:hover {
-                        color: #000000 !important;
-                    }
                 }
             }
         }

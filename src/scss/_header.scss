@@ -78,21 +78,21 @@
 
     &__text {
         font-weight: 500;
-        font-size: 13px;
-        line-height: 140%;
+        font-size: 0.8125rem;
+        line-height: 1.4;
         letter-spacing: 0.02em;
         text-align: right;
         @media (max-width: 1100px) {
             text-align: center;
         }
         @media (max-width: 768px) {
-            font-size: 12px;
+            font-size: 0.75rem;
         }
         @media (max-width: 389px) {
-            font-size: 10px;
+            font-size: 0.625rem;
         }
         span {
-            font-size: 8px;
+            font-size: 0.42rem;
             bottom: 4px;
             position: relative;
         }
@@ -213,10 +213,11 @@
     // .header-menu__button
 
     &__button {
+        cursor: pointer;
         font-family: var(--second-family);
         font-weight: 500;
-        font-size: 13px;
-        line-height: 120%;
+        font-size: 0.8125rem;
+        line-height: 1.2;
         color: var(--white-60);
         display: flex;
         align-items: center;
@@ -317,15 +318,15 @@
                 a {
                     font-family: var(--second-family);
                     font-weight: 600;
-                    font-size: 13px;
-                    line-height: 120%;
+                    font-size: 0.8125rem;
+                    line-height: 1.2;
                     color: var(--black);
                     transition: opacity 0.3s;
                     &:hover {
                         opacity: 0.7;
                     }
                     @media (max-width: 1100px) {
-                        font-size: 14px;
+                        font-size: 0.875rem;
                     }
                 }
             }
@@ -459,12 +460,12 @@
         width: 100%;
         text-align: left;
         font-weight: 500;
-        font-size: 14px;
-        line-height: 120%;
+        font-size: 0.875rem;
+        line-height: 1.2;
         letter-spacing: 0.01em;
         color: var(--black);
         @media (max-width: 768px) {
-            font-size: 13px;
+            font-size: 0.8125rem;
         }
         img {
             display: none;
@@ -500,8 +501,8 @@
         }
         a {
             font-weight: 700;
-            font-size: 18px;
-            line-height: 135%;
+            font-size: 1.125rem;
+            line-height: 1.35;
             letter-spacing: 0.01em;
             color: var(--red);
             transition: opacity 0.3s;
@@ -515,17 +516,17 @@
 
     &__work {
         font-weight: 500;
-        font-size: 14px;
-        line-height: 150%;
+        font-size: 0.875rem;
+        line-height: 1.5;
         letter-spacing: 0.01em;
         color: var(--black);
         span {
-            font-size: 8px;
+            font-size: 0.5rem;
             bottom: 5px;
             position: relative;
         }
         p {
-            font-size: 13px;
+            font-size: 0.8125rem;
             color: rgba(42, 42, 42, 0.6);
             span {
                 bottom: 4px;
@@ -573,158 +574,6 @@
             content: "";
             bottom: calc(50% - 1px);
             transform: rotate(45deg);
-        }
-    }
-}
-
-//========================================================================================================================================================
-
-.special-vision {
-    // Хедер
-    .header {
-        background: #ffffff !important;
-        border-bottom: 2px solid #000000 !important;
-
-        .special & {
-            top: 0 !important; // Убираем отступ для плашки специальных возможностей
-        }
-
-        // Логотип
-        &__logo {
-            img {
-                filter: brightness(0) !important; // Делаем логотип черным
-            }
-        }
-
-        // Текст в хедере
-        &__text {
-            color: #000000 !important;
-
-            a {
-                color: #0033cc !important;
-
-                &:hover {
-                    color: #000000 !important;
-                }
-            }
-        }
-
-        // Бургер
-        &__burger {
-            .icon-menu {
-                span,
-                &::before,
-                &::after {
-                    background-color: #000000 !important;
-                }
-            }
-        }
-    }
-
-    // Меню
-    .header-menu {
-        @media (max-width: 1100px) {
-            background: #ffffff !important;
-        }
-
-        &__list {
-            @media (max-width: 1100px) {
-                gap: 20px !important;
-            }
-        }
-
-        &__button {
-            color: #000000 !important;
-            font-size: 16px !important;
-
-            @media (max-width: 1100px) {
-                color: #000000 !important;
-                font-size: 18px !important;
-            }
-        }
-
-        &__arrow {
-            img {
-                @media (max-width: 1100px) {
-                    filter: brightness(0) !important;
-                }
-            }
-        }
-
-        &__dropdown {
-            @media (max-width: 1100px) {
-                background: #ffffff !important;
-            }
-
-            ul {
-                background: #f0f0f0 !important;
-
-                li {
-                    a {
-                        color: #000000 !important;
-                        font-size: 16px !important;
-
-                        &:hover {
-                            opacity: 0.6 !important;
-                        }
-                    }
-                }
-            }
-        }
-
-        &__back {
-            img {
-                filter: brightness(0) !important;
-            }
-        }
-    }
-
-    // Контакты в хедере
-    .header-contacts {
-        &__arrow {
-            svg {
-                &.arrow-white {
-                    fill: #000000 !important;
-                }
-                &.arrow-red {
-                    fill: #000000 !important;
-                }
-            }
-        }
-
-        &__body {
-            background: #f0f0f0 !important;
-            border: 2px solid #000000 !important;
-        }
-
-        &__logo {
-            img {
-                filter: brightness(0) !important;
-            }
-        }
-
-        &__location {
-            color: #000000 !important;
-            font-size: 16px !important;
-
-            img {
-                filter: brightness(0) !important;
-            }
-        }
-
-        &__phones {
-            a {
-                color: #0033cc !important;
-                font-size: 20px !important;
-            }
-        }
-
-        &__work {
-            color: #000000 !important;
-
-            p {
-                color: #000000 !important;
-            }
         }
     }
 }
