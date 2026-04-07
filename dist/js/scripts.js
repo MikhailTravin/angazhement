@@ -215,7 +215,7 @@ if (menuItems) {
   }
 
   menuItems.forEach(item => {
-    const arrow = item.querySelector('.header-menu__arrow');
+    const arrow = item.querySelector('.header-menu-arrow');
     if (arrow) {
       arrow.addEventListener('click', handleArrowClick);
     }
@@ -1266,3 +1266,12 @@ function pageNavigation() {
   }
 }
 pageNavigation()
+
+//========================================================================================================================================================
+
+window.A11yWidget.init({
+  trigger: '.a11y-start',
+  icon: 'glasses',
+  features: { fontSize: true }
+});
+

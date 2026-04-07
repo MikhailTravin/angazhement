@@ -6,12 +6,14 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+		<link rel="stylesheet" href="css/a11y-widget.css" />
 		<link rel="stylesheet" href="css/swiper.min.css" />
 		<link rel="stylesheet" href="css/fancybox.min.css" />
 		<link rel="stylesheet" href="css/styles.css" />
 
 		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
 	</head>
 
 	<body class="preload mp">
@@ -38,7 +40,7 @@
 								<li class="header-menu__item">
 									<div class="header-menu__button">
 										<a href="./">Люди</a>
-										<div class="header-menu__arrow">
+										<div class="header-menu__arrow header-menu-arrow">
 											<img src="img/icons/arrow1.svg" alt="">
 										</div>
 									</div>
@@ -63,8 +65,8 @@
 									</div>
 								</li>
 								<li class="header-menu__item">
-									<div class="header-menu__button">
-										<a href="./">Театр</a>
+									<div class="header-menu__button header-menu-arrow">
+										<span>Театр</span>
 										<div class="header-menu__arrow">
 											<img src="img/icons/arrow1.svg" alt="">
 										</div>
@@ -161,10 +163,6 @@
 								<span></span>
 							</span>
 						</button>
-						<a id="specialVisionToggle" style="cursor: pointer; display: inline-block;" href="javascript:void(0)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M23 12C23 14.5 18.4167 21 12 21C5.58333 21 1 14.5 1 12C1 9.5 5.58333 3 12 3C18.4167 3 23 9.5 23 12ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12ZM12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" fill="#fff"></path>
-							</svg>
-						</a>
 					</div>
 				</div>
 			</header>
@@ -534,6 +532,7 @@
 		<script src="js/swiper-8.4.7.min.js"></script>
 		<script src="js/fancybox.umd.js"></script>
 		<script src="js/dynamic_adapt.js"></script>
+		<script src="js/a11y-widget.js"></script>
 		<script src="js/scripts.js"></script>
 	</body>
 
