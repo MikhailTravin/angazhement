@@ -888,7 +888,6 @@
         @media (max-width: 992px) {
             position: relative;
             top: 0;
-            gap: 24px;
         }
     }
 
@@ -942,17 +941,6 @@
                 background-color: var(--red);
                 border: 1px solid transparent;
                 color: var(--black);
-            }
-        }
-        &.mob {
-            display: none;
-            @media (max-width: 992px) {
-                display: flex;
-            }
-        }
-        &.mob-none {
-            @media (max-width: 992px) {
-                display: none;
             }
         }
         &.active {
