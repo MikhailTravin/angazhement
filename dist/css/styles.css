@@ -2203,7 +2203,6 @@ html[data-a11y-active=true][data-a11y-color-contrast] button.a11y-panel__option-
   .block-sticky__body {
     position: relative;
     top: 0;
-    gap: 24px;
   }
 }
 .block-sticky__column {
@@ -2260,21 +2259,6 @@ html[data-a11y-active=true][data-a11y-color-contrast] button.a11y-panel__option-
     background-color: var(--red);
     border: 1px solid transparent;
     color: var(--black);
-  }
-}
-.block-sticky__button.mob {
-  display: none;
-}
-@media (max-width: 992px) {
-  .block-sticky__button.mob {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-@media (max-width: 992px) {
-  .block-sticky__button.mob-none {
-    display: none;
   }
 }
 .block-sticky__button.active {
@@ -3851,6 +3835,16 @@ html[data-a11y-active=true][data-a11y-color-contrast] button.a11y-panel__option-
 }
 .header-menu__item {
   position: relative;
+}
+@media (max-width: 1100px) {
+  .header-menu__item.header-menu-mob .header-menu__arrow {
+    display: none;
+  }
+}
+@media (max-width: 1100px) {
+  .header-menu__item.header-menu-mob .header-menu__dropdown {
+    display: none;
+  }
 }
 @media (min-width: 1101px) {
   .header-menu__item:hover .header-menu__button {
